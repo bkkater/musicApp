@@ -1,14 +1,13 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import BackgroundGradient from '../../components/BackgroundGradient';
+import Header from '../../components/Header';
 
-import style from './styles';
-
-function Home() {
+export default function Playlists() {
     return (
-        <View style={style.container}>
-            <Text style={style.TitleText}></Text>
+        <View>
+            <BackgroundGradient/>
+            <Header title='Playlists'/>
         </View>
-    );
+    )
 }
-
-export default Home;

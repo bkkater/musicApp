@@ -5,7 +5,7 @@ import { Ionicons, Feather, Octicons } from '@expo/vector-icons';
 import Library from '../pages/Library';
 import Playlists from '../pages/Playlists';
 import Search from '../pages/Search';
-import More from '../pages/More';
+import Settings from '../pages/Settings';
 
 const Tab = createBottomTabNavigator();
 
@@ -66,8 +66,8 @@ export default function MenuTabs() {
                     }
                 }} />
             <Tab.Screen
-                name="More"
-                component={More}
+                name="Settings"
+                component={Settings}
                 options={{
                     tabBarLabel: 'Settings',
                     tabBarIcon: ({ color, size, focused }) => {

@@ -2,11 +2,14 @@ import React from 'react';
 import { View, Text } from 'react-native';
 
 import style from './styles';
+import Header from '../../components/Header';
+import BackgroundGradient from '../../components/BackgroundGradient';
 
 function Home() {
     return (
-        <View style={style.container}>
-            <Text style={style.TitleText}></Text>
+        <View>
+            <BackgroundGradient/>
+            <Header title='Search'/>
         </View>
     );
 }
