@@ -14,7 +14,7 @@ const BackgroundGradient: React.FC = ({ children }) => {
         }}>
         <LinearGradient
           // Background Linear Gradient
-          colors={['#C9D6FF', 'transparent', 'transparent']}
+          colors={['#C9D6FF', '#C9D6FF', 'transparent']}
           style={{
             position: 'absolute',
             left: 0,

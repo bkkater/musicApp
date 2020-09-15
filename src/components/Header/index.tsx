@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react';
-import { View, Text } from 'react-native';
+import React, { ReactNode, useState } from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
 
 import { Ionicons, Entypo } from '@expo/vector-icons'
 
@@ -12,26 +12,34 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ title, subtitle, icon }) => {
-    if(subtitle){
-        <View style={style.container}>
-        {icon}
-        
+    const [ darkMode, setDarkMode ] = useState(false)
 
-        <Ionicons name="ios-arrow-back" size={25} color="#343434" />
-        <View style={style.headerDescription}>
-            <Text style={style.TitleTextNoSub}>{title}</Text>
+    function handleDarkMode(){
+        setDarkMode(!darkMode)
+    }
+    
+    if (subtitle) {
+        <View style={style.container}>
+            {icon}
+
+
+            <Ionicons name="ios-arrow-down" size={25} color="#343434" />
+            <View style={style.headerDescription}>
+                <Text style={style.TitleTextNoSub}>{title}</Text>
+            </View>
+            <Entypo name="dots-three-vertical" size={20} color="black" style={{ marginTop: 2 }} />
         </View>
-        <Entypo name="dots-three-vertical" size={20} color="black" style={{ marginTop: 2 }} />
-    </View>
     }
     return (
         <View style={style.container}>
             {icon}
-            <Ionicons name="ios-arrow-back" size={25} color="#343434" />
+            <Ionicons name="ios-arrow-down" size={25} color="#343434" />
             <View style={style.headerDescription}>
                 <Text style={style.TitleText}>{title}</Text>
             </View>
-            <Entypo name="dots-three-vertical" size={20} color="black" style={{ marginTop: 2 }} />
+            <TouchableOpacity onPress={handleDarkMode} style={[style.buttonDark, {backgroundColor: darkMode ? '#757575' : '#DBE1F6'}]}>
+                <Entypo name="light-up" size={20} color= {darkMode ? 'white' : '#6A6A6A'} />
+            </TouchableOpacity>
         </View>
     );
 }
