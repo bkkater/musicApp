@@ -20,11 +20,9 @@ interface Theme {
 }
 
 interface ThemeContextProps {
-  setTheme: Theme;
-  theme: Theme;
+  setTheme: React.Dispatch<React.SetStateAction<Theme>>;
+  theme: React.Dispatch<React.SetStateAction<Theme>>;
 }
-
-const ThemeContext = React.createContext<ThemeContextProps>({} as ThemeContextProps);;
 
 export const themes: Theme = {
   light: {
@@ -45,8 +43,10 @@ export const themes: Theme = {
   }
 };
 
+const ThemeContext = React.createContext<ThemeContextProps>({} as ThemeContextProps);;
+
 export const ThemeProvider: React.FC = ({ children }) => {
-  const [theme, setTheme] = useState(themes.dark);
+  const [theme, setTheme] = useState(themes.light);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
