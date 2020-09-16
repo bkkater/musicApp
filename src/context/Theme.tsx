@@ -5,14 +5,18 @@ const ThemeContext = React.createContext({});
 export const themes = {
   light: {
     colors: {
-      background: "white",
-      text: "black"
+      backgroundPrimary: "#C9D6FF",
+      backgroundSecondary: "transparent",
+      text: "black",
+      icon: "#343434"
     }
   },
   dark: {
     colors: {
-      background: "black",
-      text: "white"
+      backgroundPrimary: "#2F2E30",
+      backgroundSecondary: "575757",
+      text: "white",
+      icon: "white"
     }
   }
 };
@@ -29,7 +33,6 @@ export default function ThemeProvider({ children }) {
 
 export function useTheme() {
   const context = useContext(ThemeContext);
-  if (!context) throw new Error("useTheme must be used within a ThemeProvider");
   const { theme, setTheme } = context;
   return { theme, setTheme };
 }

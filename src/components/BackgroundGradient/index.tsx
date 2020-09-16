@@ -8,7 +8,7 @@ interface BackgroundGradientProps {
   thirdColor: string,
 }
 
-const BackgroundGradient: React.FC<BackgroundGradientProps> = ({ firstColor, secondColor, thirdColor, children }) => {
+const BackgroundGradient: React.FC<BackgroundGradientProps> = ({ firstColor, secondColor, thirdColor }) => {
     let height = Dimensions.get("window").height;
     return (
       <View
@@ -27,7 +27,6 @@ const BackgroundGradient: React.FC<BackgroundGradientProps> = ({ firstColor, sec
             right: 0,
             top: 0,
             height: height,
-            width: '100%'
           }}
         />
       </View>
