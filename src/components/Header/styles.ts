@@ -24,12 +24,11 @@ const style = StyleSheet.create({
         width: 90,
         alignSelf: "center",
         textAlign: 'center',
-        marginLeft: 20
     },
     SubtitleText: {
         fontFamily: 'Montserrat_500Medium',
         letterSpacing: 1,
-        fontSize: 17
+        fontSize: 15
     },
     headerDescription: {
         justifyContent: "center",

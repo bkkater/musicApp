@@ -9,6 +9,7 @@ import { Montserrat_300Light, Montserrat_400Regular, Montserrat_500Medium, Monts
 
 import AppStack from './src/routes/AppStack';
 
+
 export default function App() {
   let [fontsloaded] = useFonts({
     Ubuntu_400Regular,

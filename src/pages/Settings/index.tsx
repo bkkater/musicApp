@@ -16,19 +16,7 @@ function Settings() {
     return (
         <View>
             <BackgroundGradient firstColor='#C9D6FF' secondColor='#C9D6FF' thirdColor='transparent'/>
-            <Header title='Settings' subtitle='alo' />
-
-            <View style={style.darkMode}>
-                <Text style={style.darkModeText}>Dark Mode</Text>
-                <Switch
-                    trackColor={{ false: "#767577", true: "#F2994A" }}
-                    thumbColor={"#f4f3f4"}
-                    ios_backgroundColor="#3e3e3e"
-                    onValueChange={toggleSwitch}
-                    value={isEnabled}
-                    style={style.switch}
-                />
-            </View>
+            <Header title='Settings' subtitle={'SETTINGS'}/>
 
         </View>
     );

@@ -21,8 +21,8 @@ export const themes = {
   }
 };
 
-export default function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(themes.light);
+export const ThemeProvider: React.FC = ({ children }) => {
+  const [theme, setTheme] = useState(themes.dark);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
@@ -33,6 +33,6 @@ export default function ThemeProvider({ children }) {
 
 export function useTheme() {
   const context = useContext(ThemeContext);
-  const { theme, setTheme } = context;
-  return { theme, setTheme };
+
+  return context;
 }
