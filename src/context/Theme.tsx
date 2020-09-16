@@ -1,8 +1,32 @@
 import React, { createContext, useState, useContext } from "react";
 
-const ThemeContext = React.createContext({});
+interface Theme {
+  light: {
+    colors: {
+      backgroundPrimary: string
+      backgroundSecondary: string
+      text: string,
+      icon: string
+    }
+  },
+  dark: {
+    colors: {
+      backgroundPrimary: string
+      backgroundSecondary: string
+      text: string,
+      icon: string
+    }
+  }
+}
 
-export const themes = {
+interface ThemeContextProps {
+  setTheme: Theme;
+  theme: Theme;
+}
+
+const ThemeContext = React.createContext<ThemeContextProps>({} as ThemeContextProps);;
+
+export const themes: Theme = {
   light: {
     colors: {
       backgroundPrimary: "#C9D6FF",
