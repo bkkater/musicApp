@@ -9,10 +9,14 @@ import Player from '../pages/Player';
 const { Screen, Navigator } = createStackNavigator();
 
 function AppStack() {
+
     return (
         <NavigationContainer>
-            <Navigator screenOptions={{headerShown: false}}> 
-                <Screen name='MenuTabs' component={MenuTabs} />
+            <Navigator screenOptions={{ headerShown: false }}>
+                <Screen
+                    name='MenuTabs'
+                    component={MenuTabs}
+                />
                 <Screen name='Player' component={Player} />
             </Navigator>
         </NavigationContainer>

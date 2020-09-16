@@ -7,11 +7,11 @@ import Playlists from '../pages/Playlists';
 import Search from '../pages/Search';
 import Settings from '../pages/Settings';
 
-const Tab = createBottomTabNavigator();
+const {Navigator, Screen} = createBottomTabNavigator();
 
 export default function MenuTabs() {
     return (
-        <Tab.Navigator
+        <Navigator
             tabBarOptions={{
                 style: {
                     elevation: 0,
@@ -32,51 +32,51 @@ export default function MenuTabs() {
                 inactiveTintColor: '#C1BCCC',
                 activeTintColor: '#FF6B16',
             }}>
-            <Tab.Screen
+            <Screen
                 name="Library"
                 component={Library}
                 options={{
                     tabBarLabel: 'Library',
                     tabBarIcon: ({ color, size, focused }) => {
                         return (
-                            <Feather name="inbox" size={24} color={focused ? '#FF6B16': color}/>
+                            <Feather name="inbox" size={24} color={focused ? '#FF6B16' : color} />
                         );
                     }
                 }} />
-            <Tab.Screen
+            <Screen
                 name="Playlists"
                 component={Playlists}
                 options={{
                     tabBarLabel: 'Playlists',
                     tabBarIcon: ({ color, size, focused }) => {
                         return (
-                            <Ionicons name="ios-musical-notes" size={24} color={focused ? '#FF6B16': color} />                          
+                            <Ionicons name="ios-musical-notes" size={24} color={focused ? '#FF6B16' : color} />
                         );
                     }
                 }} />
-            <Tab.Screen
+            <Screen
                 name="Search"
                 component={Search}
                 options={{
                     tabBarLabel: 'Search',
                     tabBarIcon: ({ color, size, focused }) => {
                         return (
-                            <Feather name="search" size={24} color={focused ? '#FF6B16': color} />
+                            <Feather name="search" size={24} color={focused ? '#FF6B16' : color} />
                         );
                     }
                 }} />
-            <Tab.Screen
+            <Screen
                 name="Settings"
                 component={Settings}
                 options={{
                     tabBarLabel: 'Settings',
                     tabBarIcon: ({ color, size, focused }) => {
                         return (
-                            <Octicons name="settings" size={24} color={focused ? '#FF6B16': color} />
+                            <Octicons name="settings" size={24} color={focused ? '#FF6B16' : color} />
 
                         );
                     }
                 }} />
-        </Tab.Navigator>
+        </Navigator>
     );
 }

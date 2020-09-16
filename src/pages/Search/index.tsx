@@ -1,14 +1,15 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-
-import style from './styles';
-import Header from '../../components/Header';
 import BackgroundGradient from '../../components/BackgroundGradient';
 
-function Home() {
+import Header from '../../components/Header';
+
+
+
+function Home(){
     return (
         <View>
-            <BackgroundGradient/>
+            <BackgroundGradient firstColor='#C9D6FF' secondColor='#C9D6FF' thirdColor='transparent'/>
             <Header title='Search'/>
         </View>
     );

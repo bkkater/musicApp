@@ -2,7 +2,13 @@ import React from 'react';
 import { View, Dimensions } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-const BackgroundGradient: React.FC = ({ children }) => {
+interface BackgroundGradientProps {
+  firstColor: string,
+  secondColor: string,
+  thirdColor: string,
+}
+
+const BackgroundGradient: React.FC<BackgroundGradientProps> = ({ firstColor, secondColor, thirdColor, children }) => {
     let height = Dimensions.get("window").height;
     return (
       <View
@@ -14,17 +20,16 @@ const BackgroundGradient: React.FC = ({ children }) => {
         }}>
         <LinearGradient
           // Background Linear Gradient
-          colors={['#C9D6FF', '#C9D6FF', 'transparent']}
+          colors={[firstColor, secondColor, thirdColor]}
           style={{
             position: 'absolute',
             left: 0,
             right: 0,
             top: 0,
-            height: height
+            height: height,
+            width: '100%'
           }}
         />
-
-        {children}
       </View>
     );
 }

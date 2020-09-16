@@ -8,7 +8,7 @@ import BackgroundGradient from '../../components/BackgroundGradient';
 function Home() {
     return (
         <View>
-            <BackgroundGradient/>
+            <BackgroundGradient firstColor='#C9D6FF' secondColor='#C9D6FF' thirdColor='transparent'/>
             <Header title='Library'/>
         </View>
     );
